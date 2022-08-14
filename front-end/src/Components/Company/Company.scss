@@ -1,0 +1,107 @@
+
+.semi-transparent{
+   background-color: rgba(10, 76, 190, 0.216);
+ }
+.tile-design {
+
+   border-radius: 20px;
+   border-width: 2px;
+   border-style: solid;
+   border-color: rgb(150, 150, 150);
+   padding: 10px;
+   margin-left: 20px;
+   margin-top: 20px;
+   margin-right: 20px;
+ }
+
+
+.text-bold{
+   font-weight: bold;
+}
+.text-spacing{
+   height: 20px;
+   display: flex;
+}
+
+ @media only screen and (max-width: 800px) {
+   .tile-design {
+      margin-left: 20px;
+      margin-top: 20px;
+      margin-right: 20px;
+      padding: 8px;
+      border-radius: 18px;
+      
+   }
+   .company-data{
+      font-size: 100%;
+
+   }
+   .text-spacing{
+      height: 18px;
+   }
+}
+@media only screen and (max-width: 600px) {
+   .tile-design {
+      margin-left: 20px;
+      margin-top: 16px;
+      padding: 6px;
+      border-radius: 16px;
+      margin-right: 20px;
+      
+   }
+   .company-data{
+      font-size: 80%;
+   }
+   .text-spacing{
+      height: 16px;
+   }
+}
+@media only screen and (max-width: 410px) {
+   .tile-design {
+      margin-left: 20px;
+      margin-top: 12px;
+      margin-right: 20px;
+      padding: 4px;
+      border-radius: 14px;
+      
+   }
+   .text-spacing{
+      align-items: center;
+      height: 14px;
+   }
+   .company-data{
+      font-size: 60%;
+   }
+}
+@media only screen and (max-width: 300px) {
+   .tile-design {
+      margin-left: 20px;
+      margin-top: 8px;
+      margin-right: 20px;
+      padding: 3px;
+      border-radius: 12px;
+      
+   }
+   .company-data{
+      font-size: 40%;
+   }
+   .text-spacing{
+      height: 12px;
+   }
+}
+@media only screen and (max-width: 200px) {
+   .tile-design {
+      margin-left: 20px;
+      margin-top: 6px;
+      margin-right: 20px;
+      padding: 2px;
+      border-radius: 10px;
+      
+   }
+   .company-data{
+      font-size: 30%;
+   }
+   .text-spacing{
+      height: 10px;
+   }
+}

@@ -1,0 +1,30 @@
+.scale-text{
+   padding-top: 90px;
+   margin: auto;
+   font-size: 30px;
+   text-align: center;
+}
+@media only screen and (max-width: 800px) {
+   .scale-text{
+      padding-top: 90px;
+      font-size: 25px;
+   }
+}
+@media only screen and (max-width: 600px) {
+   .scale-text{
+      padding-top: 70px;
+      font-size: 20px;
+   }
+}
+@media only screen and (max-width: 400px) {
+   .scale-text{
+      padding-top: 50px;
+      font-size: 15px;
+   }
+}
+@media only screen and (max-width: 200px) {
+   .scale-text{
+      padding-top: 30px;
+      font-size: 10px;
+   }
+}

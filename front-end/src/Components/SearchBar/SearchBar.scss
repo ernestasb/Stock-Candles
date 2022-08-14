@@ -1,0 +1,41 @@
+.error{
+   color: red;
+   font-weight: bold;
+   font-size: 20px;
+   animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+ }
+
+ .semi-transparent{
+   background-color: rgba(157, 157, 157, 0.216);
+ }
+
+ .search-wrapper{
+   padding-top: 5px;
+   padding-bottom: 5px;
+ }
+
+@media only screen and (max-width: 800px) {
+   .error{
+      font-size: 20px;
+   }
+}
+@media only screen and (max-width: 600px) {
+   .error{
+      font-size: 15px;
+   }
+}
+@media only screen and (max-width: 400px) {
+   .error{
+      font-size: 8px;
+   }
+}
+@media only screen and (max-width: 200px) {
+   .error{
+      font-size: 5px;
+   }
+}
