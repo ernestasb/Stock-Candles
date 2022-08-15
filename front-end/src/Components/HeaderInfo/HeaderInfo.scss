@@ -1,5 +1,5 @@
 .header-title {
-   font-style:normal ;
+   font-style: normal;
    display: inline-block;
    color: rgba(0, 0, 0, 0.601);
    margin: 2px;
@@ -8,7 +8,6 @@
    font-style: italic;
    font-variant: normal;
    vertical-align: middle
-
 }
 
 .img-logo {
@@ -20,34 +19,41 @@
    .header-title {
       font-size: 50px;
    }
-   .img-logo{
+
+   .img-logo {
       width: 60px;
    }
 
 }
+
 @media only screen and (max-width: 600px) {
    .header-title {
       font-size: 40px;
    }
-   .img-logo{
+
+   .img-logo {
       width: 40px;
    }
 
 }
+
 @media only screen and (max-width: 400px) {
    .header-title {
       font-size: 20px;
    }
-   .img-logo{
+
+   .img-logo {
       width: 20px;
    }
 
 }
+
 @media only screen and (max-width: 200px) {
    .header-title {
       font-size: 10px;
    }
-   .img-logo{
+
+   .img-logo {
       width: 10px;
    }
 
@@ -59,6 +65,6 @@
    margin-bottom: 10px;
    width: 50%;
    display: flex;
-  justify-content: center;
-  align-items: center;
+   justify-content: center;
+   align-items: center;
 }

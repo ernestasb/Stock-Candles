@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom"
-import Company from "../Company/Company"
+import Company from "./Company/Company"
 import getCompanies from "../../Services/getCompanies"
 import { Loading } from "carbon-components-react";
 import "./CompanyGrid.scss"
@@ -18,7 +18,7 @@ const CompanyGrid = () => {
 
    //when search params change in URL
    useEffect(() => {
-
+      setCompanies(undefined);
       if (validateSearchInput(searchParams.get("symbol"))) {
          getCompanies(searchParams.get("symbol")).then(response => {
             setCompanies(response);
@@ -41,9 +41,9 @@ const CompanyGrid = () => {
                   )
                )
                )
-               : <div className="scale-text">Not found </div>)
+               : <div className="scale-text">No results found </div>)
             : (validateSearchInput(searchParams.get("symbol"))
-               ?  <Loading className="kek" />
+               ? <Loading />
                : <div className="scale-text">Invalid input </div>
             )
          }

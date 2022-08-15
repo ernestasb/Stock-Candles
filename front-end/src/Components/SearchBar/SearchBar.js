@@ -11,20 +11,20 @@ const SearchBar = () => {
    //query params
    const [searchParams, setSearchParams] = useSearchParams();
    const [error, setError] = useState();
-   const [path,setpath] = useState()
-
 
    //validate string (letters and spaces only)
    const validateSearchInput = str => {
       return /^[A-Za-z\s]*$/.test(str);
    }
 
+
+
    //check if enter is pressed
    const handleKeyDown = args => {
 
       if (args.key === "Enter") {
          if (validateSearchInput(args.target.value)) {
-            routeToGrid(args)
+            routeToGrid(args);
             setError(false);
 
          } else {
@@ -47,10 +47,15 @@ const SearchBar = () => {
          console.log("erroras URL validate");
          setError(true);
       } else {
-         postUserData({ action: "search", value: searchParams.get("symbol") })
+         postUserData({ action: "search", value: searchParams.get("symbol") });
       }
 
-   }, [searchParams,path])
+   }, [searchParams])
+
+   useEffect(() => {
+      setError(false);
+   }, [window.location.pathname])
+
 
    //loads searchbar
    return (
@@ -58,13 +63,10 @@ const SearchBar = () => {
          <div className="semi-transparent search-wrapper">
             {error
                ? <p className="error">Only characters and spaces allowed for search input.</p>
-               : <p/>}
+               : <p />}
             <Search
                className="magnifier"
                closeButtonLabelText="Clear search input"
-               defaultValue={path==="/"
-               ? "" 
-               : searchParams.get("symbol")}
                id="search-1"
                labelText="Searchas"
                maxLength={35}

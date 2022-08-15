@@ -1,5 +1,5 @@
 import { DatePicker, DatePickerInput } from "carbon-components-react"
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom"
 import getStocks from "../../Services/getStocks"
 import { Loading } from "carbon-components-react";
@@ -8,9 +8,7 @@ import postUserData from "../../Services/saveUserData"
 
 
 
-import React, { Component } from 'react';
 import CanvasJSReact from '../CandlesChart/canvasjs.react';
-var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const StockInfo = () => {
@@ -21,7 +19,7 @@ const StockInfo = () => {
    const [endDate, setEndDate] = useState(new Date());
 
    //return options parameters to draw chart
-   const getChartOpts = (data, compInfo) => {
+   const getChartOpts = (data) => {
 
       let dataPoints = [];
 
@@ -62,7 +60,7 @@ const StockInfo = () => {
          }]
       }
 
-      return options
+      return options;
    }
 
    //on date change reload
@@ -74,10 +72,10 @@ const StockInfo = () => {
          endDate.valueOf().toString().slice(0, -3))
          .then(response => {
             setStocks(response);
-            postUserData({ action: "browsedStock", value: response })
+            postUserData({ action: "browsedStock", value: response });
          });
 
-   }, [startDate, endDate])
+   }, [startDate, searchParams, endDate])
 
    const validateSearchInput = str => {
       return /^[A-Za-z\s]*$/.test(str);
@@ -85,7 +83,7 @@ const StockInfo = () => {
 
    return (
 
-      <div className="datepicker-wrapper trimSpace">
+      <div>
          <DatePicker className="datepicker-style "
             datePickerType="range"
             dateFormat="Y-m-d"
@@ -110,15 +108,15 @@ const StockInfo = () => {
          </DatePicker>
 
          {stocks
-            ? (stocks.s == "ok"
-               ? (localStorage.getItem("compName") != ""
-                  ? <div className="chart-spacing">
+            ? (stocks.s === "ok"
+               ? (localStorage.getItem("compName") !== ""
+                  ? <div className="chart-wrapper">
                      <CanvasJSChart options={getChartOpts(stocks)} />
                   </div>
                   : <div>Not found </div>)
                : <div>Not found </div>)
             : (validateSearchInput(searchParams.get("symbol"))
-               ? <Loading className="kek" />
+               ? <Loading />
                : <div>Invalid input </div>
             )
          }

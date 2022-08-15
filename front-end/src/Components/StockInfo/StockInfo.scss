@@ -1,7 +1,15 @@
-
-
-.datepicker-style{
+.datepicker-style {
    display: flex !important;
    align-items: center;
    scale: 100%;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.chart-wrapper {
+   margin: 20px;
+   padding: 10px;
+   border-radius: 10px;
+   border-style: solid;
+   background-color: rgba(0, 0, 0, 0.138);
 }

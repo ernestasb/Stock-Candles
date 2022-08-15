@@ -14,9 +14,9 @@ const getCompanies = async (name) => {
    let list = []
    //duplicate in list since API only returns one
    if (Object.keys(response.data).length) {
-      list.push(cloneDeep(response.data))
+      list.push(cloneDeep(response.data));
       list[0].name = list[0].name + " (copy)";
-      list.push(response.data)
+      list.push(response.data);
 
    }
 
